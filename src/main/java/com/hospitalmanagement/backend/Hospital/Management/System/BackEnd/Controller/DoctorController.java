@@ -1,9 +1,12 @@
 package com.hospitalmanagement.backend.Hospital.Management.System.BackEnd.Controller;
 
 import com.hospitalmanagement.backend.Hospital.Management.System.BackEnd.Models.Doctor;
+import com.hospitalmanagement.backend.Hospital.Management.System.BackEnd.Models.Patient;
 import com.hospitalmanagement.backend.Hospital.Management.System.BackEnd.Services.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @RestController
 public class DoctorController {
@@ -26,5 +29,10 @@ public class DoctorController {
     public String updateDoctorByID(@RequestParam String docID, @RequestBody Doctor obj){
         docService.updateDocDetailsByID(docID,obj);
         return "Doctor details with docID this " + docID + "get updated";
+    }
+
+    @GetMapping("/api/doctor/getallpatients/{docID}")
+    public ArrayList<Patient> getDoctorPatients(@PathVariable String docID){
+        return docService.getDoctorPatients(docID);
     }
 }
