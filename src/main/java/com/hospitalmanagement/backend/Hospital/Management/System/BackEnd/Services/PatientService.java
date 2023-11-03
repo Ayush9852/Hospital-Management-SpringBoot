@@ -58,11 +58,15 @@ public class PatientService {
 
         patientRepo.dischargePatientByPatientId(pId);
 
+        docRepo.removeParticularPatientFromParticularDoctor(pId, docObj.getDocID());
+
+        hospitalService.deAllocatePatientsFromBed(pId);
+
         return billObj;
     }
-    public void dischargePatient(String pId){
-        patientRepo.dischargePatientByPatientId(pId);
-    }
+//    public void dischargePatient(String pId){
+//        patientRepo.dischargePatientByPatientId(pId);
+//    }
 
     public Patient getPatientById(String pId){
         return patientRepo.getPatientById(pId);

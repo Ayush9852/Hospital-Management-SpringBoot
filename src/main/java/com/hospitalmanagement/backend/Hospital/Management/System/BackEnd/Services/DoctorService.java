@@ -43,6 +43,11 @@ public class DoctorService {
         return docRepo.getDoctorByDocID(docID);
     }
 
+
+    public void removeParticularPatientFromParticularDoctor(String docId, String pId){
+        docRepo.removeParticularPatientFromParticularDoctor(pId,docId);
+    }
+
     public void updateDocDetailsByID(String docID, Doctor obj){
         docRepo.updateDocDetailsByDocID(docID,obj);
     }
