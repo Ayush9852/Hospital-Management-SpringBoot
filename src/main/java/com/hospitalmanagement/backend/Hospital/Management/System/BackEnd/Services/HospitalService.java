@@ -29,6 +29,10 @@ public class HospitalService {
         return hospitalRepo.getPatientAtParticularBedNumber(bedNumber);
     }
 
+    public void deAllocatePatientsFromBed(String pId){
+        hospitalRepo.deAllocatePatientFromBed(pId);
+    }
+
     public int getBedFee(){
         return hospitalRepo.getBedFee();
     }
