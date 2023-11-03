@@ -8,13 +8,16 @@ public class Patient {
     private String patientAddress;
     private String patientDisease;
 
-    public Patient(String pId, String patientName, String patientGender, int patientAge, String patientAddress, String patientDisease) {
+    private String patientAdmitDate;
+    public Patient(String pId, String patientName, String patientGender, int patientAge, String patientAddress, String patientDisease, String patientAdmitDate) {
         this.pId = pId;
         this.patientName = patientName;
         this.patientGender = patientGender;
         this.patientAge = patientAge;
         this.patientAddress = patientAddress;
         this.patientDisease = patientDisease;
+        this.patientAdmitDate = patientAdmitDate;
+
     }
 
     public String getpId() {
@@ -63,5 +66,9 @@ public class Patient {
 
     public void setPatientDisease(String patientDisease) {
         this.patientDisease = patientDisease;
+    }
+
+    public String getAdmitDate() {
+        return patientAdmitDate;
     }
 }

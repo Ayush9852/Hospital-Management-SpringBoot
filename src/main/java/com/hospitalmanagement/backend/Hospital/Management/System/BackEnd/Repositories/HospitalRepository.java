@@ -8,6 +8,7 @@ public class HospitalRepository {
 
     private Patient[] beds;
 
+    private final int bedFee = 500;
     public HospitalRepository(){
         this.beds = new Patient[500];
     }
@@ -21,5 +22,8 @@ public class HospitalRepository {
     }
     public Patient[] getAllBeds(){
         return beds;
+    }
+    public int getBedFee(){
+        return bedFee;
     }
 }
